@@ -1,41 +1,26 @@
-function toCao() {
-  const msg = document.getElementById("message");
-  msg.innerText = "📢 Hải đã bị tố cáo trên toàn hệ mặt trời!";
+function checkDam() {
+  const name = document.getElementById("nameInput").value.trim();
+  if (!name) {
+    document.getElementById("damResult").textContent = "Nhập tên đãa chớ!";
+    return;
+  }
+  const percent = Math.floor(Math.random() * 101);
+  let message = `${name} có độ dâm: ${percent}% 😳`;
+  if (percent > 90) message += " Quá trời dâm luôn đó nha!";
+  else if (percent > 70) message += " Hơi bị dâm á!";
+  else if (percent > 40) message += " Bình thường thôi nè!";
+  else message += " Hiền lành lắm, hổng dâm đâu!";
+  document.getElementById("damResult").textContent = message;
 }
 
-function cauCuu() {
-  const msg = document.getElementById("message");
-  msg.innerText = "🆘 Đang triển khai tường năng lượng để ngăn Hải tiếp cận!";
-}
-
-function hanhDong() {
+function randomAction() {
   const actions = [
-    "😵 Bạn vừa bị Hải cú bu không báo trước!",
-    "🔥 Hải thi triển 'Mốt lòng liên hoàn cước'!",
-    "🫨 Bạn cảm nhận được ti lực từ phía sau!",
-    "🤯 Hải vừa cạp ti bạn xong rồi... xin lỗi!",
-    "🧨 Bạn bị Hải dính chiêu 'Nốn Lừng Kép'!",
-    "🌀 Hải xì tơ rồi biến mất vào màn đêm...",
-    "🚫 Hải đang âm thầm quan sát bạn đấy!",
-    "🎯 Hải dùng kỹ năng định vị ti - lock on!"
+    "Hải Xì Tơ đang lăn lộn như con lươn 🐍",
+    "Hải Xì Tơ bật nhạc remix rồi nhảy bốc lửa 🔥",
+    "Hải Xì Tơ đang đọc thơ 18+ bằng giọng Huế 😏",
+    "Hải Xì Tơ cosplay thành Pikachu dâm đãng ⚡",
+    "Hải Xì Tơ đang cởi trần chạy vòng vòng sân bóng 🏃‍♂️"
   ];
-
-  const msg = document.getElementById("message");
-  const randomAction = actions[Math.floor(Math.random() * actions.length)];
-  msg.innerText = randomAction;
-}
-
-function testDom() {
-  const levels = [
-    "💧 Hải chỉ hơi ngứa ti...",
-    "💦 Hải đang hít hà không khí quanh bạn...",
-    "🔥 Hải bắt đầu rùng mình rồi đó!",
-    "💣 100% bị Hải mốt lòng ngay tại chỗ!",
-    "🌪️ Hải dùng 'Dâm lực tuyệt đối' – bạn mất kiểm soát!",
-    "🥵 Hải level MAX – Không ai cứu nổi bạn nữa!"
-  ];
-
-  const msg = document.getElementById("message");
-  const randomLevel = levels[Math.floor(Math.random() * levels.length)];
-  msg.innerText = randomLevel;
+  const random = actions[Math.floor(Math.random() * actions.length)];
+  document.getElementById("actionResult").textContent = random;
 }

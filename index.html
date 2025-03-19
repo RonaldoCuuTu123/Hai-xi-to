@@ -1,109 +1,53 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>💋 HẢI XÌ TƠ – GIẬT TUNG CHẢO 💋</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hải Xì Tơ | Trang Chính Thức</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap">
   <style>
     body {
-      font-family: 'Pacifico', cursive;
-      background: radial-gradient(circle, #ffe0f0 20%, #ffc0cb 100%);
-      text-align: center;
-      padding: 40px;
-      color: #b30059;
-      animation: pulse 8s infinite;
+      font-family: 'Fredoka One', cursive;
+      background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e');
+      background-size: cover;
+      background-position: center;
     }
-
-    @keyframes pulse {
-      0%, 100% { background-color: #ffe0f0; }
-      50% { background-color: #fff0f5; }
-    }
-
-    h1 {
-      font-size: 50px;
-      color: #ff1493;
-      margin-bottom: 20px;
-      text-shadow: 2px 2px #ff66b2;
-    }
-
-    .desc {
-      font-size: 22px;
-      margin-bottom: 30px;
-    }
-
-    .btn {
-      padding: 16px 30px;
-      margin: 10px;
-      font-size: 20px;
-      background-color: #ff69b4;
-      color: white;
-      border: none;
-      border-radius: 18px;
-      cursor: pointer;
-      box-shadow: 2px 6px 12px rgba(255, 105, 180, 0.4);
-      transition: all 0.2s ease;
-    }
-
-    .btn:hover {
-      background-color: #ff1493;
-      transform: scale(1.1) rotate(-1deg);
-    }
-
-    #message {
-      margin-top: 30px;
-      font-size: 24px;
-      font-weight: bold;
-      color: #99004d;
-      animation: fadeIn 0.5s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.9); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    #info {
-      margin-top: 40px;
-      background: #fff0f5;
-      padding: 20px;
-      border-radius: 20px;
-      box-shadow: 0 6px 20px rgba(255, 105, 180, 0.3);
-    }
-
-    .tag {
-      display: inline-block;
-      background-color: #ffe6f0;
-      color: #99004d;
-      padding: 10px 14px;
-      border-radius: 20px;
-      margin: 5px;
-      font-weight: bold;
+    .bg-glass {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(10px);
     }
   </style>
 </head>
-<body>
+<body class="min-h-screen flex flex-col items-center justify-center text-center p-4">
 
-  <h1>💋 HẢI XÌ TƠ 💋</h1>
-  <div class="desc">Vua của mọi loại... ti lực! 😳</div>
+  <h1 class="text-5xl text-purple-700 drop-shadow-md mb-6 animate-bounce">
+    🦄 Hải Xì Tơ Siêu Dâm Đãng 💦
+  </h1>
 
-  <button class="btn" onclick="toCao()">🚨 Tố Cáo Hải</button>
-  <button class="btn" onclick="cauCuu()">🆘 Cầu Cứu</button>
-  <button class="btn" onclick="hanhDong()">🔥 Hải Làm Gì Rồi?</button>
-  <button class="btn" onclick="testDom()">🔮 Test Độ Dâm Khi Gặp Bạn</button>
+  <div class="bg-glass rounded-2xl shadow-2xl p-8 w-full max-w-xl space-y-6">
+    <!-- Đo độ dâm -->
+    <div>
+      <h2 class="text-2xl text-pink-600 mb-2">🔍 Kiểm tra độ dâm của bạn</h2>
+      <input id="nameInput" type="text" placeholder="Nhập tên bạn vào đây..." class="w-full p-2 border rounded mb-2">
+      <button onclick="checkDam()" class="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded-full">Xem ngay</button>
+      <p id="damResult" class="mt-4 text-xl text-purple-700 font-bold"></p>
+    </div>
 
-  <div id="message"></div>
-
-  <div id="info">
-    <h3>🔍 Hồ sơ dâm học của Hải:</h3>
-    <div class="tag">Mốt lòng cực đại</div>
-    <div class="tag">Dâm loạn điên cuồng</div>
-    <div class="tag">Nốn lừng từ xa</div>
-    <div class="tag">Cú bu đỉnh cao</div>
-    <div class="tag">Tự động sờ ti ẩn</div>
-    <div class="tag">Chuyên gia xì tơ vô hình</div>
+    <!-- Random hành động Hải xì tơ -->
+    <div>
+      <h2 class="text-2xl text-purple-600 mb-2">🎲 Hải Xì Tơ làm gì?</h2>
+      <button onclick="randomAction()" class="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-full">Gọi Hải xì tơ</button>
+      <p id="actionResult" class="mt-4 text-lg text-gray-800"></p>
+    </div>
   </div>
 
+  <footer class="mt-8 text-sm text-white drop-shadow">
+    Made with 💘 Soái ca Cựu Tự
+  </footer>
+
   <script src="main.js"></script>
+
 </body>
 </html>
